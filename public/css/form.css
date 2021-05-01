@@ -1,0 +1,66 @@
+body{
+    background-image: url(/images/background.jpg);
+}
+.formcontainer{
+    background-color: rgba(88, 89, 90, 0.589);
+    height: 400px;
+    margin-top: 50px;    
+}
+.inputfield{
+    width: 400px;
+    border-radius: 10px;
+}
+.form{
+    margin: 20px;
+}
+.formlabel{
+    color: rgb(237, 245, 245);
+    font-size: medium;
+}
+.createbtn{
+    background-color: rgb(24, 146, 13);
+    color: rgb(247, 246, 248);
+    border-radius: 10px;
+    border-style: none;
+    width: 120px;
+    height: 50px;
+    font-size: large;
+    font-weight: normal;
+}
+.required{
+    color: rgb(230, 10, 10);
+    font-size: larger;
+    font-weight: bold;
+    margin-left: 10px;
+}
+.useritem{
+    background-color: rgba(238, 238, 247, 0.658);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+.btn{
+    float: right;
+}
+.head1{
+    color: aqua;
+    margin-left: 20px;
+}
+.head2{
+    color: aqua;
+    margin-left: 10px;
+}
+.updatebtn{
+    background-color: rgb(63, 36, 218);
+    border-radius: 5px;
+    color: #ffff;
+    border-style: none;
+    margin: 2px;
+}
+.deletebtn{
+    background-color: rgb(235, 15, 15);
+    border-radius: 5px;
+    color: #ffff;
+    border-style: none;
+    margin: 2px;
+}

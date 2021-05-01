@@ -1,25 +1,52 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import ContactForm from './components/contactForm';
+import Contactlists from './components/contactlists';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const[users,setstate]=useState([])
+
+  function handleAddContacts(user) {
+    setstate([
+      ...users, user
+    ])
+    
+  }
+
+  function handleDelete(id) {
+   let newContacts = users.filter((user) => user.id !==id);
+   console.log(newContacts)
+   setstate(newContacts)
+  }
+
+  function handleUpdate(id , updatedinfo) {
+    let newContacts = users.map((user) =>{
+      if (user.id===id) {
+        return updatedinfo
+      }
+      return user
+    })
+    setstate(newContacts)
+  }
+  
+
+ return(
+   <div>
+     <div className="container">
+      <div className="col-md-6 formcontainer">
+        <div><ContactForm handleAddContacts={handleAddContacts}/></div>
+      </div>
+      <div className="col-md-6">
+        <div>
+          <h2 className="head2">Contacts</h2>
+          <Contactlists allUsers={users} delete={handleDelete} updatecontact={handleUpdate}/></div>
+      </div>
+     </div>
+       
+   </div>
+  
+ )
 }
 
 export default App;
