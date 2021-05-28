@@ -1,11 +1,9 @@
-const initialstate = ({name:"Richard",
-                       contactId:"123456", 
-                       number: "0012367678488" 
-                    })
+const initialstate = { contacts:[]}
 const contactReducer =(state=initialstate,action) =>{
         switch (action.type) {
             case "ADD_CONTACT":
-                
+                console.log(action.payload)
+                return { ...state, contacts: [...state.contacts, action.payload] };
                 break;
         
             default:

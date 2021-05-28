@@ -40,7 +40,7 @@ function App() {
       <div className="col-md-6">
         <div>
           <h2 className="head2">Contacts</h2>
-          <Contactlists allUsers={users} delete={handleDelete} updatecontact={handleUpdate}/></div>
+          <Contactlists  delete={handleDelete} updatecontact={handleUpdate}/></div>
       </div>
      </div>
        

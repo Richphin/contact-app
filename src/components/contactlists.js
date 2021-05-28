@@ -1,27 +1,25 @@
+import { connect } from "react-redux";
 import Contact from "./contact";
 
 
+
 function Contactlists(props) {
-   
-       
-           
-               return(
+            return(
                 <div >
-                     {props.allUsers.map((user) => (<Contact user={user} delete={props.delete} updatecontact={props.updatecontact}/> ))}
+                     {props.contacts.map((user) => (<Contact user={user} delete={props.delete} updatecontact={props.updatecontact}/> ))}
                    
                   
                 
                 </div>
                )
-           
-       
-   
     
-        
-
 }
-
-export default Contactlists;
+function mapStateToProps(state){
+     return{
+          contacts: state.contacts,
+     }
+}
+export default connect(mapStateToProps,{})(Contactlists);
 
 
 
