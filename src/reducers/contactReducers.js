@@ -4,8 +4,23 @@ const contactReducer =(state=initialstate,action) =>{
             case "ADD_CONTACT":
                 console.log(action.payload)
                 return { ...state, contacts: [...state.contacts, action.payload] };
-                break;
-        
+                
+            case "DELETE_CONTACT":
+                var id=action.payload;
+                var newContacts = state.contacts.filter((user) => user.id !==id);
+                return {contacts:newContacts}
+            
+            case "UPDATE_CONTACT":
+                var id=action.payload.id;
+                var updatedinfo=action.payload.updatedcontactinfo;
+                var Contactsafterupdate = state.contacts.map((user) =>{
+                    if (user.id===id) {
+                      return updatedinfo
+                    }
+                    return user
+                  })
+                  return{contacts:Contactsafterupdate}
+                  
             default:
                 return state;
         }

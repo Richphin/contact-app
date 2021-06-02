@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { connect } from "react-redux";
+import { updateContact } from "../actions/contactActions";
+
 function EditContactform(props) {
     const[state,userstate]=useState({
         Name:props.user.Name,
@@ -14,7 +17,7 @@ function EditContactform(props) {
             }
     function handleonclick() {
         let user={...state , id:props.user.id}
-        props.updatecontact(props.user.id, user)
+        props.updateContact(props.user.id, user)
         props.hideModal()
     }
     return(
@@ -38,4 +41,8 @@ function EditContactform(props) {
     </div>
     )
 }
-export default EditContactform;
+let mapDispatchToProps={
+    updateContact
+}
+let mapStateToProps=()=>{}
+export default connect(mapStateToProps, mapDispatchToProps)(EditContactform);

@@ -1,6 +1,9 @@
 import { Modal } from "react-bootstrap";
 import { useState } from "react";
 import EditContactform from "./Editcontactform";
+import { connect } from "react-redux";
+import { deleteContact } from "../actions/contactActions";
+
 
 function Contact(props) {
     const [displaymodal,setshowmodal] =useState(false);
@@ -37,24 +40,20 @@ function Contact(props) {
 
                 </Modal>
 
-                 <button className="deletebtn" onClick={() => {props.delete(props.user.id)}}>Delete</button>
+                 <button className="deletebtn" onClick={() => {props.deleteContact(props.user.id)}}>Delete</button>
                  
                  
               </div>
-              
-              
-          
-        
-       
-     
+    
      </div>
     )
 
-
-
-
-
-
 }
+let mapDispatchToProps ={
+    deleteContact,
+}
+let mapStateToProps=() =>{}
 
-export default Contact;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contact)
+;

@@ -1,7 +1,7 @@
 import { Component , } from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
-import addContact from "../actions/contactActions";
+import {addContact} from "../actions/contactActions";
 
 
 
