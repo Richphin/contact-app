@@ -1,6 +1,11 @@
 const initialstate = { contacts:[]}
 const contactReducer =(state=initialstate,action) =>{
         switch (action.type) {
+
+            case "ADD_ALL_CONTACTS":
+            let contacts = action.payload;
+            return { contacts: contacts };
+
             case "ADD_CONTACT":
                 console.log(action.payload)
                 return { ...state, contacts: [...state.contacts, action.payload] };

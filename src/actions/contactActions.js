@@ -1,9 +1,44 @@
 import React from 'react'
 
+export  function getAllContacts() {
+    return(dispatch,state,{getFirestore})=>{
+       const db = getFirestore();
+       db.collection('contacts')
+       .get()
+       .then((results)=>{
+           let contacts =[];
+           results.forEach((doc)=>{
+               contacts.push(doc.data());
+           });
+           dispatch({
+               type: 'ADD_ALL_CONTACTS',
+               payload: contacts,
+             });
+       })
+       .catch((err) => {
+           console.log(err);
+         });
+    };
+   
+}
+
 export function addContact(newContact) {
-    return{
-        type:"ADD_CONTACT",
-        payload: newContact
+    return(dispatch,state,{getFirestore})=>{
+        const db = getFirestore();
+        db.collection('contacts')
+        .add(newContact)
+        .then(()=>{
+            dispatch(
+                {
+                    type: "ADD_CONTACT",
+                    payload: newContact,
+                }
+            );
+        })
+        .catch((err) => {
+            console.log(err);
+          });
+
     }
 }
 
