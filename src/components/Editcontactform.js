@@ -19,6 +19,7 @@ function EditContactform(props) {
         let user={...state , id:props.user.id}
         props.updateContact(props.user.id, user)
         props.hideModal()
+        console.log('err')
     }
     return(
         <div >

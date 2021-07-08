@@ -32,7 +32,7 @@ function Contact(props) {
                     <Modal.Body>
                         <EditContactform
                             user={props.user}
-                            updatecontact={props.updatecontact}
+                            
                             hideModal={hideModal}
                         />
                     </Modal.Body>
