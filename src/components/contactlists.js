@@ -12,7 +12,7 @@ function Contactlists(props) {
       },[]);
             return(
                 <div >
-                     {props.contacts.map((user) => (<Contact user={user} delete={props.delete} updatecontact={props.updatecontact}/> ))}
+                     {props.contacts.map((user) => (<Contact user={user} /> ))}
                  
                 </div>
                )
@@ -20,7 +20,7 @@ function Contactlists(props) {
 }
 function mapStateToProps(state){
      return{
-          contacts: state.contacts,
+          contacts: state.userState.contacts,
      }
 }
 
