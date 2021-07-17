@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 
 const Allreducers =combineReducers({
     userState:contactReducer,
-    firebasestate: firebaseReducer,
+    firebaseState: firebaseReducer,
 })
 
 
